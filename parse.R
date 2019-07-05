@@ -1,0 +1,7 @@
+library(dplyr)
+library(yaml)
+library(data.table)
+a <- yaml.load_file("Raw data/1000851.yaml")
+b <- as.data.frame(do.call(rbind, a[3]))
+c <- as.data.frame(do.call(rbind, b$V1[[1]]))
+d <- as.data.frame(do.call(cbind, c$deliveries))
